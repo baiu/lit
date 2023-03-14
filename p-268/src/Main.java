@@ -14,11 +14,12 @@ public class Main {
      * https://leetcode.com/problems/missing-number/
      */
     public static int missingNumber(int[] nums) {
-        Integer sum = Arrays.stream(nums)
-            .boxed()
-            .parallel()
-            .reduce(0, Integer::sum);
-        Integer fullSum = nums.length * (nums.length + 1)/2;
-        return fullSum - sum;
+        int length = nums.length;
+        int result = 0;
+        for (int i = 0; i < length; i++) {
+            result ^= nums[i] ^ i;
+        }
+        result ^= length;
+        return result;
     }
 }
