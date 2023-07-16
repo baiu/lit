@@ -10,16 +10,7 @@ public class Main {
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int idx1 = m - 1;
-        int idx2 = nums2.length - 1;
-        int resultIdx = nums1.length - 1;
-
-        while (idx2 >= 0) {
-            if (idx1 >= 0 && nums1[idx1] > nums2[idx2]) {
-                nums1[resultIdx--] = nums1[idx1--];
-            } else {
-                nums1[resultIdx--] = nums2[idx2--];
-            }
-        }
+        System.arraycopy(nums2, 0, nums1, m, n);
+        Arrays.sort(nums1);
     }
 }
