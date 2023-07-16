@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 public class Main {
 
@@ -8,14 +7,7 @@ public class Main {
     }
 
     public static int majorityElement(int[] nums) {
-        Map<Integer, Integer> numsCount = new HashMap<>();
-        for (int n : nums) {
-            Integer nCount = numsCount.getOrDefault(n, 0);
-            numsCount.put(n, ++nCount);
-            if (nCount > nums.length / 2) {
-                return n;
-            }
-        }
-        return 0;
+        Arrays.sort(nums);
+        return nums[nums.length/2];
     }
 }
