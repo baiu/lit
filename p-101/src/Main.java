@@ -26,6 +26,7 @@ public class Main {
             return false;
         }
 
-        return isSymmetricNodes(left.left, right.right) && isSymmetricNodes(left.right, right.left);
+        return isSymmetricNodes(left.left, right.right) &&
+            isSymmetricNodes(left.right, right.left);
     }
 }
